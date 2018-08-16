@@ -1,52 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-  background: #485563;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  background: rgb(39, 57, 86);
+  color:rgb(242, 244, 247);
 }
 
-.container{
-  margin:10px;
-  padding: 10px;
- 
+.navbar{
+   background:rgb(60, 81, 114);
+  border:2px solid rgb(39, 57, 86);
+
 }
-.box{
-  margin:15px;
+input[type="text"]{
+  margin:5px;
+}
+.hoverwell{
+  margin:20px;
   padding:20px;
-  background: rgb(86, 106, 112);
-  
+  background:rgb(82, 106, 142);
 }
 
 .hoverwell:hover {
-    background-color: #485563;
-    cursor: pointer;
-  }
-  
-  .container {
-    padding-top: 10px;
-  }
-  
-  .pointable {
-    cursor: pointer;
-  }
-  
-  button {
-    color: #555;
-  }
-  
-  [hidden] {
-    display: none !important;
-  }
-  
-  .toast-success {
-    background-color: #51a351;
-  }
-  .toast-error {
-    background-color: #bd362f;
-  }
-  .toast-info {
-    background-color: #2f96b4;
-  }
-  .toast-warning {
-    background-color: #f89406;
-  }
+  background-color: #485563;
+  cursor: pointer;
+}
+
+.container {
+  padding-top: 10px;
+}
+
+.pointable {
+  cursor: pointer;
+}
+
+button {
+  color: #555;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.toast-success {
+  background-color: #51a351;
+}
+.toast-error {
+  background-color: #bd362f;
+}
+.toast-info {
+  background-color: #2f96b4;
+}
+.toast-warning {
+  background-color: #f89406;
+}
