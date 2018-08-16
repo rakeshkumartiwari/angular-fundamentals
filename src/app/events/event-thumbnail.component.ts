@@ -1,7 +1,11 @@
-<div class="container">
-    <h1>Upcoming Angular Events</h1>
-    <hr>
-    <div class="box">
+import { Component, Input } from '@angular/core';
+
+@Component({
+    // tslint:disable-next-line:component-selector
+    selector: 'event-thumbnail',
+    template: `
+
+<div class="box">
         <h1>{{event.name}}</h1>
         <div>Date: {{event.date}}</div>
         <div>Time: {{event.time}}</div>
@@ -12,4 +16,10 @@
             <span>{{event.location.city}} , {{event.location.country}}</span>
         </div>
     </div>
-</div>
+
+`
+})
+
+export class EventThumbnailComponent {
+    @Input() event: any;
+}
