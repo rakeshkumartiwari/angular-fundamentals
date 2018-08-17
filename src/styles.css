@@ -16,6 +16,7 @@ input[type="text"]{
   margin:20px;
   padding:20px;
   background:rgb(82, 106, 142);
+  border:1px solid rgb(82, 106, 142);
 }
 
 .hoverwell:hover {
