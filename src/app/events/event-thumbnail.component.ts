@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 
     <div class="hoverwell">
         <h2>{{event?.name}}</h2>
-        <div>Date: {{event?.date}}</div>
+        <div [hidden]="!event?.date">Date: {{event?.date}}</div>
         <div>Time: {{event?.time}}</div>
         <div>Price: \${{event?.price}}</div>
         <div *ngIf="event?.location">
