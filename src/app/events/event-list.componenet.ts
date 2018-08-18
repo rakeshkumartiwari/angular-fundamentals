@@ -4,8 +4,6 @@ import { ToastrService } from './common/toastr.service';
 
 
 @Component({
-    // tslint:disable-next-line:component-selector
-    selector: 'event-list',
     template:
         `<div class="container">
             <h1>Upcoming Angular Events</h1>
