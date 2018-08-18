@@ -2,14 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { EventsAppComponent } from './events-app.component';
-import {EventsListComponent} from './events/event-list.componenet';
-import {EventThumbnailComponent} from './events/event-thumbnail.component';
-import {NavBarComponent} from './events/navbar.component';
-import {EventService} from './events/shared/event.service';
-import {ToastrService} from './events/common/toastr.service';
-import {EventDetailsComponent} from './events/event-details/event-details.component';
-import {appRoutes} from './routes';
-import { RouterModule} from '@angular/router';
+import { EventsListComponent } from './events/event-list.componenet';
+import { EventThumbnailComponent } from './events/event-thumbnail.component';
+import { NavBarComponent } from './events/navbar.component';
+import { EventService } from './events/shared/event.service';
+import { ToastrService } from './events/common/toastr.service';
+import { EventDetailsComponent } from './events/event-details/event-details.component';
+import { appRoutes } from './routes';
+import { RouterModule } from '@angular/router';
 import { CreateEventComponent } from './events/create-event.component';
 import { Error404Component } from './events/error/404.Component';
 import { EventRouteActivator } from './events/event-details/event-route-activator.service';
@@ -31,7 +31,19 @@ import { EventRouteActivator } from './events/event-details/event-route-activato
     CreateEventComponent,
     Error404Component
   ],
-  providers: [EventService, ToastrService, EventRouteActivator],
+  providers: [
+    EventService,
+    ToastrService,
+    EventRouteActivator,
+    { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
+  ],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
+export function checkDirtyState(component: CreateEventComponent) {
+
+  if (component.isDirty) {
+    return window.confirm('This event is not save, do you really want to cancel.');
+  }
+  return true;
+}
