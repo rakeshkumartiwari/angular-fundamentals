@@ -13,6 +13,7 @@ export class LoginComponent {
 
     userName;
     password;
+    mouseLogin;
     login(formValue) {
         this.authService.loginUser(formValue.userName, formValue.password);
         this.router.navigate(['events']);
