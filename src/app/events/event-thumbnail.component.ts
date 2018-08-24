@@ -7,7 +7,7 @@ import {IEvent} from './shared/index';
 
     <div [routerLink]="['/events', event.id]" class="well hoverwell thumbnail">
         <h2>{{event?.name}}</h2>
-        <div [hidden]="!event?.date">Date: {{event?.date}}</div>
+        <div [hidden]="!event?.date">Date: {{event?.date | date:'shortDate'}}</div>
         <div [ngClass]="getStartTimeClass()"
              [ngSwitch]='event?.time'>
             Time: {{event?.time}}
