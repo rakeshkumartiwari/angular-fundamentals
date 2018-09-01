@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import {EventService} from './shared/index';
 
 @Component({
     templateUrl: './create-event.component.html',
@@ -19,12 +20,14 @@ export class CreateEventComponent {
     ngEvent;
     isDirty = true;
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private eventService: EventService) {
 
     }
 
     saveEvent(formValues) {
-        console.log(formValues);
+        this.eventService.saveEvent(formValues);
+        this.isDirty = false;
+        this.router.navigate(['/events']);
     }
 
     cancel() {
