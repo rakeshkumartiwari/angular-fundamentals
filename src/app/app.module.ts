@@ -10,7 +10,8 @@ import {
   EventListsResolver,
   EventService,
   CreateEventComponent,
-  CreateSessionComponent
+  CreateSessionComponent,
+  restrictedWords
   } from './events/index';
 import { AuthService } from './user/auth.sevice';
 import { EventsAppComponent } from './events-app.component';
@@ -38,7 +39,7 @@ import { Error404Component } from './events/error/404.Component';
     EventDetailsComponent,
     CreateEventComponent,
     Error404Component,
-    CreateSessionComponent
+    CreateSessionComponent,
   ],
   providers: [
     EventService,
