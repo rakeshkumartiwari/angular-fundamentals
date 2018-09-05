@@ -20,6 +20,7 @@ import { ISession, restrictedWords } from '../shared/index';
 })
 
 export class CreateSessionComponent implements OnInit {
+    @Output() saveNewSession =  new EventEmitter();
     @Output() cancelAddSession = new EventEmitter();
 
     newSessionForm: FormGroup;
@@ -63,10 +64,11 @@ export class CreateSessionComponent implements OnInit {
             abstract: formValues.abstract,
             voters: []
         };
-        console.log(session);
+        this.saveNewSession.emit(session);
     }
 
     cancel() {
         this.cancelAddSession.emit();
     }
+
 }
