@@ -13,6 +13,8 @@ import {
   CreateSessionComponent,
   SessionListComponent
   } from './events/index';
+
+import { CollapsibleComponent } from './events/common/collapsible-well.component';
 import { AuthService } from './user/auth.sevice';
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './events/navbar.component';
@@ -40,7 +42,8 @@ import { Error404Component } from './events/error/404.Component';
     CreateEventComponent,
     Error404Component,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    CollapsibleComponent
   ],
   providers: [
     EventService,
