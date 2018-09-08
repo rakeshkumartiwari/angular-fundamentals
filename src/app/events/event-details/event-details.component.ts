@@ -13,9 +13,9 @@ import { IEvent, ISession } from '../shared/index';
         background: rgb(82, 106, 142);
         color:white;
         border: none;
-        margin:1px;
-        height:40px;
-        width:100px;
+    }
+    .btn-default:active{
+        background: rgb(39, 57, 86);
     }
     `]
 })
@@ -24,7 +24,7 @@ export class EventDetailsComponent {
     event: any;
     addMode: boolean;
     filterBy = 'all';
-
+    sortBy = 'votes';
     constructor(private eventService: EventService, private route: ActivatedRoute) {
     }
 
