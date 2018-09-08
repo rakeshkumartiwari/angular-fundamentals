@@ -9,12 +9,22 @@ import { IEvent, ISession } from '../shared/index';
     .container{padding-left:20px;padding-right:20px;}
     .event-image{height:100px;}
     a{cursor:pointer}
+    .btn-default{
+        background: rgb(82, 106, 142);
+        color:white;
+        border: none;
+        margin:1px;
+        height:40px;
+        width:100px;
+    }
     `]
 })
 
 export class EventDetailsComponent {
     event: any;
     addMode: boolean;
+    filterBy = 'all';
+
     constructor(private eventService: EventService, private route: ActivatedRoute) {
     }
 
