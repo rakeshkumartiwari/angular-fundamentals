@@ -6,15 +6,15 @@ import { Component, Input } from '@angular/core';
     template:
         `
     <div (click)="toggleContent()" class="well hoverwell thumbnail">
-    <h4>{{title}}</h4>
-
-    <ng-content *ngIf="visible"></ng-content>
+    <h4>
+    <ng-content select="[well-title]"></ng-content>
+    </h4>
+    <ng-content *ngIf="visible" select="[well-body]"></ng-content>
     </div>
     `
 })
 
 export class CollapsibleComponent {
-    @Input() title: string;
     visible = true;
     toggleContent() {
         this.visible = !this.visible;

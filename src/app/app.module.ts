@@ -11,7 +11,8 @@ import {
   EventService,
   CreateEventComponent,
   CreateSessionComponent,
-  SessionListComponent
+  SessionListComponent,
+  DurationPipe
   } from './events/index';
 
 import { CollapsibleComponent } from './events/common/collapsible-well.component';
@@ -43,7 +44,8 @@ import { Error404Component } from './events/error/404.Component';
     Error404Component,
     CreateSessionComponent,
     SessionListComponent,
-    CollapsibleComponent
+    CollapsibleComponent,
+    DurationPipe
   ],
   providers: [
     EventService,
