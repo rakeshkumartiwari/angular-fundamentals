@@ -15,14 +15,15 @@ import {
   DurationPipe
   } from './events/index';
 
-import { CollapsibleComponent } from './events/common/collapsible-well.component';
-import { AuthService } from './user/auth.sevice';
+import { AuthService} from './user/auth.sevice';
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './events/navbar.component';
-import { ToastrService } from './events/common/toastr.service';
+import {JQ_TOKEN, TOASTR_TOKEN, Toastr, CollapsibleComponent} from './events/common/index';
 import { appRoutes } from './routes';
 import { Error404Component } from './events/error/404.Component';
 
+const toastr: Toastr = window['toastr'];
+const jQuery = window['$'];
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { Error404Component } from './events/error/404.Component';
   ],
   providers: [
     EventService,
-    ToastrService,
+    {provide: TOASTR_TOKEN, useValue: toastr },
+    {provide: JQ_TOKEN, useValue: jQuery},
     EventRouteActivator,
     EventListsResolver,
     AuthService,
