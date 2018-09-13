@@ -18,12 +18,11 @@ import {IEvent} from './shared/index';
 
 })
 
-export class EventsListComponent {
+export class EventsListComponent implements OnInit {
     events: IEvent[];
     constructor(private eventService: EventService, private route: ActivatedRoute) {
     }
 
-    // tslint:disable-next-line:use-life-cycle-interface
     ngOnInit() {
        this.events = this.route.snapshot.data['events'];
     }

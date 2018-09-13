@@ -21,7 +21,7 @@ import {Component, Input} from '@angular/core';
     `,
     styles: [
         `
-        ng-content{background: rgb(82, 106, 142)}
+        .modal-body{height:300px; overflow-y: scroll}
         .modal-contant{background:rgb(82, 106, 142);}
         `
     ]
