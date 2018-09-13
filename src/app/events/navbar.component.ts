@@ -14,7 +14,7 @@ import { EventService } from './shared/event.service';
 })
 
 export class NavBarComponent {
-    serachTerm = '';
+    searchTerm = '';
     foundSession: ISession[];
     constructor(public auth: AuthService, private eventService: EventService) {
 
