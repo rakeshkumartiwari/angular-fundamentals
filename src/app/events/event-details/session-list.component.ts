@@ -16,7 +16,7 @@ export class SessionListComponent implements OnChanges {
     visibleSessions: ISession[] = [];
 
 // tslint:disable-next-line:no-shadowed-variable
-constructor(private auth: AuthService, private voterService: VoterService) {
+constructor(public auth: AuthService, private voterService: VoterService) {
 
 }
 
