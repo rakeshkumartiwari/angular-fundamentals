@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import {
   EventsListComponent,
   EventThumbnailComponent,
@@ -12,18 +13,24 @@ import {
   CreateEventComponent,
   CreateSessionComponent,
   SessionListComponent,
-  DurationPipe,
   UpvoteComponent,
-  VoterService
+  VoterService,
+  DurationPipe,
+  LocationValidator
 } from './events/index';
 
 import { AuthService } from './user/auth.sevice';
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './events/navbar.component';
 import {
-  JQ_TOKEN, TOASTR_TOKEN, Toastr,
-  CollapsibleComponent, SimpleModalComponent, ModalTriggerDirective
+  JQ_TOKEN,
+  TOASTR_TOKEN,
+  Toastr,
+  CollapsibleComponent,
+  SimpleModalComponent,
+  ModalTriggerDirective
 } from './events/common/index';
+
 import { appRoutes } from './routes';
 import { Error404Component } from './events/error/404.Component';
 
@@ -50,10 +57,11 @@ const jQuery = window['$'];
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleComponent,
-    DurationPipe,
     SimpleModalComponent,
     ModalTriggerDirective,
-    UpvoteComponent
+    UpvoteComponent,
+    DurationPipe,
+    LocationValidator
   ],
   providers: [
     EventService,
