@@ -1,9 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    // tslint:disable-next-line:component-selector
-    selector: 'up-vote',
-    template: `
+  // tslint:disable-next-line:component-selector
+  selector: 'up-vote',
+  template: `
 <div class="votingWidgetContainer pointable" (click)="onClick()">
     <div class="hoverwell votingWidget">
         <div class="votingButton">
@@ -15,20 +15,21 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     </div>
 </div>
     `,
-    styleUrls: ['./upvote.component.css']
+  styleUrls: ['./upvote.component.css']
 })
-
 export class UpvoteComponent {
-    @Input() count: number;
-    @Input() set voted(val) {
-        this.iconColor = val ? 'red' : 'white';
-    }
-    @Output() vote = new EventEmitter();
+  @Input()
+  count: number;
+  @Input()
+  set voted(val) {
+    this.iconColor = val ? 'red' : 'white';
+  }
+  @Output()
+  vote = new EventEmitter();
 
-    iconColor: string;
+  iconColor: string;
 
-    onClick() {
-        this.vote.emit({});
-    }
-
+  onClick() {
+    this.vote.emit({});
+  }
 }

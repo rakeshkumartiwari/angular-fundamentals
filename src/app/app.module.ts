@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import {
   EventsListComponent,
@@ -38,12 +39,12 @@ const toastr: Toastr = window['toastr'];
 const jQuery = window['$'];
 
 @NgModule({
-
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
 
   declarations: [
@@ -75,11 +76,12 @@ const jQuery = window['$'];
   ],
   bootstrap: [EventsAppComponent]
 })
-export class AppModule { }
+export class AppModule {}
 export function checkDirtyState(component: CreateEventComponent) {
-
   if (component.isDirty) {
-    return window.confirm('You have not save this event, do you really want to cancel? ');
+    return window.confirm(
+      'You have not save this event, do you really want to cancel? '
+    );
   }
   return true;
 }

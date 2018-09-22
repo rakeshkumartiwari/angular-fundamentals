@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-import {IEvent} from './shared/index';
+import { IEvent } from './shared/index';
 @Component({
-    // tslint:disable-next-line:component-selector
-    selector: 'event-thumbnail',
-    template: `
+  // tslint:disable-next-line:component-selector
+  selector: 'event-thumbnail',
+  template: `
 
     <div [routerLink]="['/events', event.id]" class="well hoverwell thumbnail">
         <h2>{{event?.name | uppercase}}</h2>
@@ -24,25 +24,36 @@ import {IEvent} from './shared/index';
     </div>
 
 `,
-    styles: [`
-    .green{color:#003300 !important;}
-    .bold{font-weight:bold;}
-    .pad-left{margin-left:10px;}
-    .well div {color:#bbb;}
-    .thumbnail{min-height:210px;}
-    `]
+  styles: [
+    `
+      .green {
+        color: #003300 !important;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      .pad-left {
+        margin-left: 10px;
+      }
+      .well div {
+        color: #bbb;
+      }
+      .thumbnail {
+        min-height: 210px;
+      }
+    `
+  ]
 })
-
 export class EventThumbnailComponent {
-    @Input() event: IEvent;
-    getStartTimeClass() {
+  @Input()
+  event: IEvent;
+  getStartTimeClass() {
+    // first approach
 
-        // first approach
+    const isEarlyStart = this.event && this.event.time === '8:00 am';
+    return { green: isEarlyStart, bold: isEarlyStart };
 
-     const isEarlyStart = this.event && this.event.time === '8:00 am';
-     return {green: isEarlyStart , bold: isEarlyStart };
-
-     // second approach
+    // second approach
 
     //  if (this.event && this.event.time === '8:00 am') {
     //      return 'green bold';
@@ -56,5 +67,5 @@ export class EventThumbnailComponent {
     //      } else {
     //         return [];
     //      }
-    }
+  }
 }

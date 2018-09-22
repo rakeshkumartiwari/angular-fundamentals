@@ -1,12 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { EventService } from './shared/event.service';
 import { ActivatedRoute } from '@angular/router';
-import {IEvent} from './shared/index';
-
+import { IEvent } from './shared/index';
 
 @Component({
-    template:
-        `<div class="container">
+  template: `<div class="container">
             <h1>Upcoming Angular Events</h1>
          <hr>
          <div class="row">
@@ -16,16 +14,15 @@ import {IEvent} from './shared/index';
          </div>
         </div>
         `
-
 })
-
 export class EventsListComponent implements OnInit {
-    events: IEvent[];
-    constructor(private eventService: EventService, private route: ActivatedRoute) {
-    }
+  events: IEvent[];
+  constructor(
+    private eventService: EventService,
+    private route: ActivatedRoute
+  ) {}
 
-    ngOnInit() {
-       this.events = this.route.snapshot.data['events'];
-    }
-
+  ngOnInit() {
+    this.events = this.route.snapshot.data['events'];
+  }
 }

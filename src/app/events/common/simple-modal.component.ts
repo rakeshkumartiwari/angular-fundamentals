@@ -1,9 +1,9 @@
 import { Component, Input, Inject, ViewChild, ElementRef } from '@angular/core';
 import { JQ_TOKEN } from './jQuery.service';
 @Component({
-    // tslint:disable-next-line:component-selector
-    selector: 'simple-modal',
-    template: `
+  // tslint:disable-next-line:component-selector
+  selector: 'simple-modal',
+  template: `
 <div id="{{elementId}}" #modalContainer class="modal fade" tabindex="-1" >
     <div class="modal-dialog">
         <div class="modal-contant">
@@ -19,30 +19,34 @@ import { JQ_TOKEN } from './jQuery.service';
     </div>
 </div>
     `,
-    styles: [
-        `
-        .modal-body{height:300px; overflow-y: scroll}
-        .modal-contant{background:rgb(82, 106, 142);}
-        `
-    ]
+  styles: [
+    `
+      .modal-body {
+        height: 300px;
+        overflow-y: scroll;
+      }
+      .modal-contant {
+        background: rgb(82, 106, 142);
+      }
+    `
+  ]
 })
-
 export class SimpleModalComponent {
-    @Input() title: string;
-    @Input() elementId: string;
-    @Input() closeOnBodyClick: string;
+  @Input()
+  title: string;
+  @Input()
+  elementId: string;
+  @Input()
+  closeOnBodyClick: string;
 
-    @ViewChild('modalContainer') containerEl: ElementRef;
+  @ViewChild('modalContainer')
+  containerEl: ElementRef;
 
-    constructor(@Inject(JQ_TOKEN) private $: any) {
+  constructor(@Inject(JQ_TOKEN) private $: any) {}
 
+  closeModal() {
+    if (this.closeOnBodyClick.toLocaleLowerCase() === 'true') {
+      this.$(this.containerEl.nativeElement).modal('hide');
     }
-
-    closeModal() {
-        if (this.closeOnBodyClick.toLocaleLowerCase() === 'true') {
-            this.$(this.containerEl.nativeElement).modal('hide');
-        }
-    }
-
+  }
 }
-
