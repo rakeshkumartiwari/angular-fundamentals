@@ -276,7 +276,7 @@ const EVENTS: IEvent[] = [
       },
       {
         id: 6,
-        name: "These aren't the directives you're looking for",
+        name: 'These aren\'t the directives you\'re looking for',
         presenter: 'John Papa',
         duration: 2,
         level: 'Intermediate',
